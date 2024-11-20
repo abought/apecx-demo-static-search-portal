@@ -9,43 +9,26 @@
     "attributes": {
       "metadata": {
         "title": "Serverless Search Portal",
-        "description": "This is an example of a basis Globus Search interface generated from a static.json file."
+        "description": "This is an example of a basic Globus Search interface generated from a static.json file."
       },
       "theme": {
-        "colors": {
-          "brand": {
-            "50": "#e8f3ff",
-            "100": "#cfd8e3",
-            "200": "#b5bdcc",
-            "300": "#97a3b4",
-            "400": "#7b899d",
-            "500": "#626f84",
-            "600": "#4b5768",
-            "700": "#343e4b",
-            "800": "#1e2530",
-            "900": "#070c18"
-          }
-        }
+        "colorScheme": "red"
       },
       "content": {
         "logo": {
-          "src": "https://www.usgs.gov/themes/custom/usgs_tantalum/usgs_logo.png",
-          "alt": "USGS – science for a changing world"
+          "src": "https://www.globus.org/assets/images/logo_globus-solid.svg",
+          "alt": "Globus"
         },
-        "headline": "ScienceBase Data Releases"
+        "headline": "Globus Citation Search Demo"
       },
       "components": {
         "Result": {
-          "heading": "entries[0].content.title",
-          "summary": "entries[0].content.summary",
+          "heading": "entries[0].content.citation.title",
+          "summary": "entries[0].content.citation.abstract",
           "fields": [
             {
-              "label": "Purpose",
-              "property": "entries[0].content.purpose"
-            },
-            {
-              "label": "Material Request Instructions",
-              "property": "entries[0].content.materialRequestInstructions"
+              "label": "DOI",
+              "property": "entries[0].content.citation.DOI"
             },
             {
               "label": "Tags",
@@ -56,25 +39,25 @@
       },
       "globus": {
         "search": {
-          "index": "6d222eba-980f-410c-9a58-52a785d660ea",
+          "index": "c9f4e8ed-d9c3-47b1-9750-5e5f2d6ce3f7",
           "facets": [
             {
-              "name": "Tags",
-              "field_name": "tags.name",
+              "name": "Top Tags",
+              "field_name": "tags",
               "type": "terms",
-              "size": 10
+              "size": 25
             },
             {
-              "name": "Categories",
-              "field_name": "browseCategories",
+              "name": "Pathogens",
+              "field_name": "bio_annotations.pathogens",
               "type": "terms",
-              "size": 10
+              "size": 25
             },
             {
-              "name": "System Types",
-              "field_name": "systemTypes",
-              "type": "terms",
-              "size": 10
+              "name": "Year",
+              "field_name": "citation.issued",
+              "type": "date_histogram",
+              "date_interval": "year"
             }
           ]
         }
