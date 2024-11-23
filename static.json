@@ -7,6 +7,9 @@
   "data": {
     "version": "1.0.0",
     "attributes": {
+      "features": {
+        "useLocalStorage": true
+      },
       "metadata": {
         "title": "Serverless Search Portal",
         "description": "This is an example of a basic Globus Search interface generated from a static.json file."
@@ -25,6 +28,14 @@
         "Result": {
           "heading": "entries[0].content.citation.title",
           "summary": "entries[0].content.citation.abstract",
+          "globus": {
+            "transfer": {
+              "collection": "474b06fa-c919-493d-bcd3-7f80500cc5a6",
+              "path": {
+                "property": "entries[0].content.sample_file"
+              }
+            }
+          },
           "fields": [
             {
               "label": "DOI",
@@ -33,31 +44,51 @@
             {
               "label": "Tags",
               "property": "entries[0].content.tags"
+            },
+            {
+              "label": "Sample file",
+              "type": "globus.embed",
+              "property": "entries[0].content.sample_file",
+              "options": {
+                "collection": "474b06fa-c919-493d-bcd3-7f80500cc5a6"
+              }
             }
           ]
         }
       },
       "globus": {
+        "application": {
+          "client_id": "5f4fc571-4fa2-4d84-ab6e-567d5245af7a",
+          "scopes": [
+            "https://auth.globus.org/scopes/474b06fa-c919-493d-bcd3-7f80500cc5a6/https"
+          ]
+        },
         "search": {
-          "index": "c9f4e8ed-d9c3-47b1-9750-5e5f2d6ce3f7",
+          "index": "531c5ef8-02ff-4b0c-9652-8a033350ba53",
           "facets": [
             {
-              "name": "Top Tags",
-              "field_name": "tags",
               "type": "terms",
-              "size": 25
+              "size": 10,
+              "name": "Publication Type",
+              "field_name": "citation.type_of_reference"
             },
             {
-              "name": "Pathogens",
-              "field_name": "bio_annotations.pathogens",
-              "type": "terms",
-              "size": 25
-            },
-            {
-              "name": "Year",
-              "field_name": "citation.issued",
               "type": "date_histogram",
+              "name": "Year",
+              "field_name": "citation.date",
               "date_interval": "year"
+            },
+            {
+              "type": "terms",
+              "size": 25,
+              "name": "Top Tags",
+              "field_name": "keywords"
+            },
+            {
+              "type": "terms",
+              "name": "Biological entities",
+              "field_name": "bio_annotations",
+              "size": 50
             }
           ]
         }
