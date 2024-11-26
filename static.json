@@ -48,8 +48,9 @@
             {
               "label": "Sample file",
               "type": "globus.embed",
-              "property": "entries[0].content.sample_file",
+              "property": "entries[0].content.sample_file_url",
               "options": {
+                "height": "500px",
                 "collection": "474b06fa-c919-493d-bcd3-7f80500cc5a6"
               }
             }
