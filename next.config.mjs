@@ -22,6 +22,14 @@ const nextConfig = {
   publicRuntimeConfig: {
     basePath: `${STATIC._static?.host?.base_path || ""}`,
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // This is a workaround until search fix:
+    //  https://github.com/globus/static-search-portal/pull/250
+    ignoreBuildErrors: true,
+  },
 };
 
 export default withMDX(nextConfig);

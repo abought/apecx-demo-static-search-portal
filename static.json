@@ -38,8 +38,12 @@
           },
           "fields": [
             {
+              "label": "Date",
+              "property": "entries[0].content.citation.date"
+            },
+            {
               "label": "DOI",
-              "property": "entries[0].content.citation.DOI"
+              "property": "entries[0].content.citation.doi"
             },
             {
               "label": "Tags",
@@ -50,7 +54,7 @@
               "type": "globus.embed",
               "property": "entries[0].content.sample_file_url",
               "options": {
-                "height": "500px",
+                "height": "750px",
                 "collection": "474b06fa-c919-493d-bcd3-7f80500cc5a6"
               }
             }
