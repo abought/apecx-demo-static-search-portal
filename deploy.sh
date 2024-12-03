@@ -21,6 +21,9 @@ npm run build
 # navigate into the build output directory
 cd out
 
+# Required for gh-pages to serve static assets from folders with leading `_` names. Otherwise app breaks with js 404s.
+touch .nojekyll
+
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
