@@ -29,6 +29,6 @@ git add -A
 git commit -m 'Deploy newest version'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/abought/apecx-demo-static-search-portal.git demo:gh-pages
+git push -f https://github.com/abought/apecx-demo-static-search-portal.git main:gh-pages
 
 cd -
