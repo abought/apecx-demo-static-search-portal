@@ -1,7 +1,7 @@
 {
   "_static": {
     "host": {
-      "base_url": "https://abought.github.io/apecx-demo-static-search-portal/",
+      "base_url": "https://abought.github.io/apecx-demo-static-search-portal",
       "origin": "https://abought.github.io",
       "host": "abought.github.io",
       "base_path": "/apecx-demo-static-search-portal"
