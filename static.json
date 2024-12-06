@@ -1,11 +1,6 @@
 {
   "_static": {
-    "host": {
-      "base_url": "https://abought.github.io/apecx-demo-static-search-portal",
-      "origin": "https://abought.github.io",
-      "host": "abought.github.io",
-      "base_path": "/apecx-demo-static-search-portal"
-    },
+
     "generator": {
       "name": "@globus/static-search-portal"
     }
@@ -58,8 +53,9 @@
             {
               "label": "Sample file",
               "type": "globus.embed",
-              "property": "entries[0].content.sample_file_url",
+              "property": "entries[0].content.sample_plot_url",
               "options": {
+                "renderer": "plotly",
                 "height": "750px",
                 "collection": "474b06fa-c919-493d-bcd3-7f80500cc5a6"
               }
